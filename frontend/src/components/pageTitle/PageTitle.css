@@ -1,0 +1,17 @@
+.formTitle{
+    background-color: #6C6761;
+    /* border-right: 100px solid transparent; */
+    /* border-bottom: 70px solid #fc2e5a; */
+    padding: 10px;
+    padding-right: 10%;
+    width: max-content;
+    /* height: 40px; */
+    clip-path: polygon(0% 0%, 100% 0%, 90% 50%, 100% 100%, 0% 100%);
+    margin-bottom: 20px;
+    margin-left:-15px;
+}
+
+.formTitle p{
+    font-size: 20px;
+    color: #ffffff;
+}

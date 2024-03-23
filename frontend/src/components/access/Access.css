@@ -1,0 +1,72 @@
+.content{
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    
+}
+
+.content div{
+    margin: 5px;
+}
+
+.buttonSection{
+    display: flex;
+    margin: 5px;
+    flex-direction: column;
+    align-items: center;
+    
+}
+
+.buttonSection a{
+    position: relative;
+  text-decoration: none;
+  transition: 1s;
+  cursor:pointer;color:#534e47;
+}
+
+.buttonSection a::before,
+.buttonSection a::after {
+  content: '';
+  position: absolute;
+  width: 0%;
+  height: 2px;
+  bottom: 0;
+  background-color: #534e47;
+  transition: width 0.3s ease-out;
+}
+
+.buttonSection a::before {
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+.buttonSection a::after {
+  right: 50%;
+  transform: translateX(50%);
+}
+
+.buttonSection a:hover::before,
+.buttonSection a:hover::after {
+  width: 100%;
+}
+
+[data-tooltip] {
+    position: relative; /* Относительное позиционирование */ 
+   }
+   [data-tooltip]::after {
+    z-index:1000000;
+    content: attr(data-tooltip); /* Выводим текст */
+    position: absolute; /* Абсолютное позиционирование */
+    width: 300px; /* Ширина подсказки */
+    left: 0; top: 0; /* Положение подсказки */
+    background: #e5d1b7; /* Синий цвет фона */
+    color: #534e47; /* Цвет текста */
+    padding: 0.5em; /* Поля вокруг текста */
+    box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.3); /* Параметры тени */
+    pointer-events: none; /* Подсказка */
+    opacity: 0; /* Подсказка невидима */
+    transition: 1s; /* Время появления подсказки */
+   } 
+   [data-tooltip]:hover::after {
+    opacity: 1; /* Показываем подсказку */
+    top: 2em; /* Положение подсказки */
+   }

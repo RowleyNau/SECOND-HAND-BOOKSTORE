@@ -1,0 +1,56 @@
+/* .mainUnitMarg{
+  width: 100%;
+  height: 100%;  
+} */
+.mainUnit{
+  position:fixed;
+  display: flex;
+  /* flex-wrap: nowrap; */
+  width:calc(100% - 60px);
+  /* height: 100%; */
+  margin-top: 30px;
+  margin-left: 30px;
+  margin-right: 30px;
+  /* margin-bottom: 30px; */
+  height: max-content;
+  background-color: #ffffff;
+  top: 185.5px;
+  border-radius: 15px;
+  /* padding-left: 15px; */
+  /* padding-right: 15px; */
+  padding: 15px;
+  z-index:40000;
+  /* border: 1rem solid; */
+  flex-direction: column;
+  color:black;
+  position: absolute;
+  /* overflow-y:scroll; */
+}
+/* .mainUnit p{
+  color:black;
+} */
+.titleName
+{
+  font-size: 16px;
+}
+.basicText 
+{
+  font-size: 16px;
+  
+}
+.titleText
+{
+  font-size: 16px;
+  font-weight:bold;
+  margin-bottom: 10px;
+}
+.questionnaireContent{
+  display: grid;
+  grid-template-columns: 200px 0.5fr;
+  margin-bottom: 15px;
+}
+
+.questionnaireContent div{
+  margin-bottom:5px;
+  padding-right: 5px;
+}

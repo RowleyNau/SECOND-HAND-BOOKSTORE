@@ -1,0 +1,24 @@
+.ButtonF{
+    background-color: #6C6761;
+    padding: 7px;
+    border: none;
+    border-radius: 5px;
+    padding-left: 10px;
+    padding-right: 10px;
+    margin: 5px;
+    width: max-content;
+    cursor:pointer;
+}
+
+.ButtonF:hover {
+	transform: translate(0, 0.25em);
+}
+.ButtonF:active {
+	background: #534e47;
+}
+
+.ButtonF p{
+    color:rgb(255, 255, 255);
+    font-size: 16px;
+    text-transform: lowercase;
+}

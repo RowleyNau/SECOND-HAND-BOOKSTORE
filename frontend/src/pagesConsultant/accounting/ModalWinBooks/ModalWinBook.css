@@ -1,0 +1,30 @@
+.BasicData{
+    display: grid;
+    margin-bottom:20px;
+}
+.Main{
+    margin-top: 5px;
+}
+.BasicData label{
+    display: grid;
+    /* align-items: center; */
+    grid-template-columns:40% 60%;
+    /* grid-template-columns: */
+    /* display: flex; */
+    /* justify-content: space-around; */
+    /* margin-left:5px; */
+    margin-bottom:20px;
+}
+.BasicData label > p{
+    margin-right:5px;
+    color: black;
+    padding-top:10px;
+}
+.Parameters{
+
+}
+.Dimensions{
+    display: grid;
+    /* align-items: center; */
+    grid-template-columns:1fr 1fr 1fr;
+}

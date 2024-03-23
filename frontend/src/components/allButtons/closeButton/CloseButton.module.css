@@ -1,0 +1,12 @@
+.ButClose{
+    background: transparent;
+    font-size:18px;
+    border: none;
+    display: flex;
+    top: 0px;
+    position: relative;
+    top:0px;
+    color: #6C6761;
+    height: 100%;
+    cursor:pointer;
+}

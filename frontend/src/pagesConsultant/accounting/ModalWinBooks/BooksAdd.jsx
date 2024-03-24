@@ -21,15 +21,16 @@ const BooksAdd = (props) => {
     const [Name, setName]=useState('');
     const [Author, setAuthor]=useState('');
     const [Publishers, setPublishers]=useState('');
-    const [Location, setLocation]=useState('');
     const [Condition, setCondition]=useState('');
     const [Price, setPrice]=useState('');
-    const [Cities, setCities]=useState('');
+    const [Cities, setCities]=useState('Иркутск');
     const [OZONE, setOZONE]=useState('');
     const [VK, setVK]=useState('');
     const [Instagram, setInstagram]=useState('');
     const [Amount, setAmount]=useState('');
     const [ReceiptDate, setReceiptDate]=useState('');
+    const [Location, setLocation]=useState('');
+    const [Availability, setAvailability]=useState('');
 
     const [Features, setFeatures]=useState('');
     const [AgeRestriction, setAgeRestriction]=useState('');
@@ -109,15 +110,18 @@ const BooksAdd = (props) => {
         { value: '3', label: 'Супер обложка' }
       ];
     const selAgeRestriction = createDictionary(['+18', '+16', '+12', '+0']);  
-    const selCondition = createDictionary(['идеальное', 'с изъяноми']); 
+    const selCondition = createDictionary(['идеальное', 'с изъянами']);  
+    const selLocation = createDictionary(['магазин', 'склад']); 
+    const selAvailability = createDictionary(['в наличии', 'выкуплен', 'забронирован']); 
+    const selCities = createDictionary(['Иркутск', 'Ангарск', 'Улан-Удэ']); 
     return(
     <>
     <div className="Main">
-        <div className="BasicData">
+        <div className="BasicData">       
             
             <label>
                 <p>название:</p>
-                <InputStrMini type="text" className = "inpName" pattern="[А-Яа-я]*?\s[А-Яа-я]*?\s[А-Яа-я]*" value={Name} onClick={e =>  setName(e.target.value)} setCompanyName = {setName}/>
+                <InputStrMini type="text" className = "inpName" value={Name} onClick={e =>  setName(e.target.value)} setCompanyName = {setName}/>
             </label>
             <label>
                 <p>автор:</p> 
@@ -208,17 +212,35 @@ const BooksAdd = (props) => {
                 selectedValue= {Condition} setSelectedValue={setCondition}/>
             </label>
         </div>
-        <div className="локация">
+        <div className="BasicData Parameters">
             <label>
                 <p>положение:</p> 
+                <InputSelect className="selects" val={selLocation} selectedValue= {Location} setSelectedValue={setLocation}/>
             </label>
-            <label>наличие: </label>
-            <label>город: </label>
+            <label> 
+                <p>наличие:</p> 
+                <InputSelect className="selects" val={selAvailability}
+                selectedValue= {Availability} setSelectedValue={setAvailability}/>
+            </label>
+            <label>
+                <p>город:</p> 
+                <InputSelect className="selects" val={selCities}
+                selectedValue= {Cities} setSelectedValue={setCities}/>
+            </label>
         </div>
-        <div className="ссылки">
-            <label>OZONE: </label>
-            <label>VK: </label>
-            <label>instagram: </label>
+        <div className="BasicData">
+            <label>
+                <p>OZONE:</p> 
+                <InputStrMini type="text" className = "inpName" pattern="[А-Яа-я]*?\s[А-Яа-я]*?\s[А-Яа-я]*" value={OZONE} onClick={e =>  setName(e.target.value)} setCompanyName = {setOZONE}/>
+            </label>
+            <label> 
+                <p>VK:</p> 
+                <InputStrMini type="text" className = "inpName" pattern="[А-Яа-я]*?\s[А-Яа-я]*?\s[А-Яа-я]*" value={VK} onClick={e =>  setName(e.target.value)} setCompanyName = {setVK}/>
+            </label>
+            <label> 
+                <p>instagram:</p> 
+                <InputStrMini type="text" className = "inpName" pattern="[А-Яа-я]*?\s[А-Яа-я]*?\s[А-Яа-я]*" value={Instagram} onClick={e =>  setName(e.target.value)} setCompanyName = {setInstagram}/>
+            </label>
         </div>
         <div className="итоговые">
             <label><p>связанные книги:</p>  </label>

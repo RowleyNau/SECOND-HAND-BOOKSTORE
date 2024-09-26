@@ -1,5 +1,5 @@
 .ButtonL{
-    background-color: white;
+    background-color: transparent;
     /* padding: 7px; */
     border: none;
     /* border-radius: 5px; */
@@ -14,7 +14,7 @@
 }
 .ButtonIcon {
 	font-size:20px;
-    color:rgb(155, 11, 11);
+    color:#6C6761;
 }
 /* .ButtonL:active {
 	background: #534e47;

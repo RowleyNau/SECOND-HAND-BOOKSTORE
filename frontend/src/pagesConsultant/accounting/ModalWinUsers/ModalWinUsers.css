@@ -1,0 +1,195 @@
+.BasicData{
+    display: grid;
+    margin-bottom:20px;
+    width: max-content;
+    /* margin: 5px; */
+}
+.Main{
+    margin: 15px;
+  color:black;
+}
+
+.BasicData label{
+    display: grid;
+    /* align-items: center; */
+    grid-template-columns:40% 60%;
+    /* grid-template-columns: */
+    /* display: flex; */
+    /* justify-content: space-around; */
+    /* margin-left:5px; */
+    margin-bottom:20px;
+    align-items: center;
+}
+.BasicData label > p{
+    margin-right:5px;
+    color: black;
+    padding-top:10px;
+    padding-bottom:10px;
+}
+.Parameters input{
+    margin-right:5px;
+}
+.Dimensions{
+    display: grid;
+    /* align-items: center; */
+    grid-template-columns:1fr 1fr 1fr;
+}
+.AddElement{
+    margin-top: 5px;
+    display: inline-flex;
+
+    /* align-items: center; */
+    grid-template-columns:1fr 1fr;
+}
+.AddElement input, .AddElement ~ p{
+    margin: 5px;
+    margin-top: 0px;
+    margin-left:0px;
+    display:flex;
+    align-items: center;
+    /* display: grid;
+
+    /* align-items: center; */
+    /* grid-template-columns:1fr 1fr;  */
+}
+
+.imgA{
+    /* width: 100px; */
+    display: flex;
+    flex-wrap: wrap;
+    margin-left: 5px;
+    align-content: center;
+}
+
+.imgA img{
+    width: 100px;
+}
+.MiniTable{
+    margin-right: 10px;
+    width: 100%;
+}
+.MiniTable table{
+    border: 1px solid #6C6761 ;
+    border-radius: 5px;
+    border: 1px solid #6C6761;
+    border-collapse: collapse;
+    /* margin: 10px; */
+    width: 100%;
+}
+.MiniTable table th {
+    font-weight: revert;
+    border: 1px solid #6C6761  ;
+    padding: 5px;
+    background-color: transparent;
+    color:black;
+  }
+  .MiniTable p{
+    color:black;
+  }
+  .MiniTable table td {
+    border: 1px solid #6C6761 ;
+    padding: 5px;
+    background-color: transparent;width: max-content;
+  }  
+  .SearchTableBut{
+    width: 100%;
+    display: flex;
+    justify-content: center;
+  }
+  .priсe{
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+  }
+  .SearchTable th{
+    padding: 0px;
+    padding-right: 0px;
+  }
+
+  .owner{
+    margin-top: 5px;
+    border:none;
+    border-bottom: 1px solid #6C6761 ;
+    display:grid;
+    width: 100%;
+    grid-template-columns: 1fr 15px;
+    align-items: center;
+    padding: 5px;
+    
+  }
+  .owner p{
+    color:black;
+  }
+
+  .owner button{
+    border:none;
+    background-color: transparent;
+    font-size: 16px;
+    
+    cursor:pointer;
+  }
+  .RequiredInp{
+    border:none;
+    border-left: 2px solid #a71d1d ;
+    margin-left:-3px;
+    padding-left:3px;
+    /* width: min-content; */
+  }
+
+  .RequiredMes{
+    border:2px solid #a71d1d ;
+    /* border:2px solid #208409 ; */
+    /* border-left: 2px solid #a71d1d ; */
+    margin:-3px;
+    margin-bottom: 4px;
+    margin-top:5px;
+    padding:3px;
+    display: flex;
+    /* color: #208409; */
+    justify-content: center;
+    align-content: center;
+    /* width: min-content; */
+  }
+  .modalBookDelTrue{
+    font-size: 25px;
+    display: flex;
+    color: #208409;
+    justify-content: center;
+    align-content: center;
+  }
+  .modalBookDel{
+    display: grid;
+    width: 100%;
+    justify-content: center;
+  }
+  .modalBookDel div{
+    /* font-size: 25px; */
+    display: flex;
+    /* color: #208409; */
+    justify-content: center;
+    align-content: center;
+  }
+  .modalBookDelQ{
+    display: flex;
+    justify-content: center;
+    align-content: center;
+  }
+  .ButtonConsultation{
+    display: flex;
+    justify-content: center;
+    align-content: center;
+    width: 100%;
+    margin-bottom: 15px;
+  }
+  .actionHistory{
+    margin-top: -15px;
+    margin-bottom: 20px;
+    display:flex;
+    flex-direction: column;
+  }
+  .actionHistory > label{
+    margin-bottom: 20px;
+  }
+  .actionHistory > span{
+    margin-bottom: 20px;
+  }

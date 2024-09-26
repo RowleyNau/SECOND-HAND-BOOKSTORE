@@ -21,6 +21,7 @@
   text-decoration: none;
   transition: 1s;
   cursor:pointer;color:#534e47;
+  font-size: 18px;
 }
 
 .buttonSection a::before,
@@ -56,7 +57,7 @@
     z-index:1000000;
     content: attr(data-tooltip); /* Выводим текст */
     position: absolute; /* Абсолютное позиционирование */
-    width: 300px; /* Ширина подсказки */
+    width: 170px; /* Ширина подсказки */
     left: 0; top: 0; /* Положение подсказки */
     background: #e5d1b7; /* Синий цвет фона */
     color: #534e47; /* Цвет текста */
@@ -65,8 +66,44 @@
     pointer-events: none; /* Подсказка */
     opacity: 0; /* Подсказка невидима */
     transition: 1s; /* Время появления подсказки */
+    word-break: break-all;
    } 
    [data-tooltip]:hover::after {
     opacity: 1; /* Показываем подсказку */
     top: 2em; /* Положение подсказки */
    }
+
+   .RequiredMes{
+    border:2px solid #a71d1d ;
+    /* border:2px solid #208409 ; */
+    /* border-left: 2px solid #a71d1d ; */
+    margin:-3px;
+    margin-bottom: 4px;
+    margin-top:5px;
+    padding:3px;
+    display: flex;
+    /* color: #208409; */
+    justify-content: center;
+    align-content: center;
+    /* width: min-content; */
+  }
+  
+  .RequiredInp{
+    border:none;
+    border-left: 2px solid #a71d1d ;
+    margin-left:-3px;
+    padding-left:3px;
+    /* width: min-content; */
+  }
+  .CheckReg{
+    width: 100%;
+    display: inline-flex;
+    /* width: min-content; */
+  }
+  .CheckReg label{
+    margin-left: 5px;
+    width: 100%;
+    top:-18px;
+    display: inline-flex;
+    /* width: min-content; */
+  }

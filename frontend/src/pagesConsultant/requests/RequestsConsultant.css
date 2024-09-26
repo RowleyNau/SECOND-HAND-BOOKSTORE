@@ -1,0 +1,329 @@
+.Tabs {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    height: 100%;
+  }
+  
+  .TabList {
+    display: flex;
+    background-color: #ffffff;
+    /* border-bottom: 2px solid #ccc; */
+  }
+  
+  .Tab {
+    padding: 10px 20px;
+    cursor: pointer;
+    background-color: #6C6761;
+    border:  2px solid #6C6761;
+    border-radius: 0px;
+    border-top-left-radius: 5px;
+    border-top-right-radius: 5px;
+    color: white;
+    transition: background-color 0.3s;
+    border-bottom-style: solid;
+    border-bottom-width: 0px;
+    white-space: nowrap;
+  }
+  
+  .Tab:hover {
+    background-color: #383633;
+  }
+  
+  .Tab.active {
+    background-color: #ffffff;
+    color: rgb(0, 0, 0);
+    border:  2px solid #6C6761;
+    border-bottom: none;
+  }
+  
+  .TabContentContainer {
+    flex: 1;
+    /* padding: 20px; */
+    border:   2px solid #6C6761;
+    border-top-width: 0px;
+  }
+  
+  .TabContent {
+    display: none;
+  }
+  
+  .TabContent.active {
+    display: block;
+  }
+  .TabListHelp{
+    width: 100%;
+    border-bottom:2px solid #6C6761;
+    /* border-bottom-width: ; */
+    /* height: 5px; */
+  }
+  .ConsultationWindowClientChoiceAll{
+    display: flex;
+    flex-direction: column;
+  }
+  .ConsultationWindow{
+    display: grid;
+    grid-template-columns: 200px 1fr 200px;
+    width: 100%;
+    position: relative;
+    width: 100%; /* Или нужная ширина */
+    height:100%;  
+  }
+  .ConsultationWindow > div{
+    overflow: hidden;
+    height: 100%; 
+  }
+  .OvHidden{
+    overflow: hidden;
+  }
+  .ConsultationWindowClientChoice{
+    border-top: 2px solid #6C6761;
+    overflow: auto;
+    height: 100%;
+  }
+  .ConsultationWindowClientChoice > div{
+    padding: 5px;
+    border-bottom: 2px solid #6C6761;
+    color:#6C6761;
+    cursor: pointer;
+  }
+  .ConsultationWindowDialog{
+    display: grid;
+    grid-template-columns: 1fr 20px;
+  }
+  .ConsultationWindowDialog > div{
+    font-size: 16px;
+    color:#aa3c3c;
+    height: 100%;
+  }
+  .ConsultationWindowDialogue{
+    border-left:  2px solid #000000;
+    border-right:  2px solid #000000;
+    display: grid;
+    grid-template-rows: 30px 1fr 30px;
+  }
+  .ConsultationWindowDialogue > p{
+    padding: 5px;
+    width: 100%;
+    display: flex;
+    align-content: flex-start;
+    justify-content: center;
+    color: #000000;
+  }
+
+
+  
+  .ConsultationWindowInputMessage{
+    position:relative;
+    bottom: 0px;
+    display: flex;
+    width: 100%;
+    height: 30px;
+    border-top: 2px solid #000000;
+  }
+  .ConsultationWindowInputMessage button{
+    background-color: transparent;
+    border:none;
+    font-size: 20px;
+    cursor: pointer;
+    width: 30px;
+    height: 100%;
+  }
+  .ConsultationWindowInputMessage input{
+    padding-left: 5px;
+    padding-right: 5px;
+    background-color: transparent;
+    border:none;
+    /* border-left: 2px solid #000000;
+    border-right: 2px solid #000000; */
+    font-size: 16px;
+    cursor: pointer;
+    /* width: 20px; */
+    width: 100%;
+  }
+  .ConsultationWindowInputMessage input:focus{
+    outline: none; /* Убираем стандартное выделение */
+    box-shadow: none;
+  }
+  ::placeholder {
+    color: rgb(95, 95, 95)0000;
+    opacity: 1; /* Firefox */
+  }
+
+  .ConsultationWindowInfo{
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-wrap: wrap;
+    align-content: flex-start;
+    justify-content: center;
+    /*grid-template-columns: 1fr; */
+  }
+  .ConsultationWindowInfo button{
+    /* width: 100%;
+    height: 100%;
+    display: grid;
+    grid-template-rows: 1fr; */
+    height: max-content;
+  }
+  .from-user {
+    width: 100%;
+    padding: 5px;
+    display: flex;
+    justify-content: flex-end;
+}
+  .to-user {
+    width: 100%;
+    padding: 5px;
+    display: flex;
+    justify-content: flex-start;
+}
+  .from-user p{
+    padding: 5px;
+    display: flex;
+    align-self: flex-end;
+    background-color: #6C6761;
+    color: #ffffff;
+    border: none;
+    width: max-content;
+    border-radius: 5px;
+}
+
+.to-user p{
+    padding: 5px;
+    display: flex;
+    background: #F0DEC8;
+    color: #000000;
+    border: none;
+    width: max-content;
+    height: min-content;
+    border-radius: 5px;
+}
+
+.message {
+    width: 100%;
+    /* padding: 10px; */
+    display: flex;
+    flex-wrap: wrap;
+    /* margin: 10px 0; */
+    /* border-radius: 15px; */
+    /* position: relative; */
+    /* word-wrap: break-word; */
+    font-size: 16px;
+    align-items: flex-end;
+    align-content: flex-end;
+}
+
+
+ 
+.ConsultationWindowSelection{
+    border-left:  2px solid #6C6761;
+    border-right:  2px solid #6C6761;
+    display: flex;
+    flex-wrap: wrap;
+    align-content: flex-start;
+    height: 100%;
+    overflow: auto;
+  } 
+.ConsultationWindowSelection > p{
+    padding: 5px;
+    width: 100%;
+    height: min-content;
+    display: flex;
+    align-content: flex-start;
+    justify-content: center;
+    color: #000000;
+    
+  }
+.ConsultationWindowSelection > div{
+    padding: 10px;
+    width: 100%;
+    /* height: 100%; */
+    /* overflow: auto; */
+  }
+.ConsultationWindowSelectionAdd{
+    display: inline-flex;
+    width: 100%;
+    justify-content: flex-start;
+    margin-top:10px;
+}
+.ConsultationWindowSelectionAdd > p{
+    display: flex;
+    align-content: center;
+    flex-wrap: wrap;
+    color:#000000;
+}
+  
+
+.table-containerSelection {
+    margin-top: 5px;
+    overflow: hidden;
+    border-radius: 5px;
+    border: 0.5px solid #6C6761;
+    display: inline-block;
+    width: 100%;
+  }
+  
+  .tableSelection {
+    display: grid;
+    grid-template-columns: 30px 1fr 30px;
+    border-collapse: collapse;
+    width: 100%;
+  }
+  .tableSelection1 {
+    display: grid;
+    grid-template-columns: 30px 1fr 30px;
+    border-collapse: collapse;
+    width: 100%;
+  }
+  
+  .cellSelection {
+    border: 0.5px solid #6C6761;
+    padding:  5px;
+    background-color: transparent;
+  }
+  .cellSelection p{
+    color:#000000;
+  }
+  .cellSelection button{
+    border:none;
+    background-color: transparent;
+    font-size: 18px;
+    display:flex;
+    justify-content: center;
+    align-content: center;
+    color:#aa3c3c;
+    cursor: pointer;
+  }
+  .ConsultationWindowSelection textarea{
+    
+    border: 2px solid #6C6761;
+  }
+  .table{
+    border-spacing: 0 !important;
+    border: 1px solid #6C6761;
+    border-radius: 5px;
+    border-collapse: unset;
+  }
+  .SelectionParamsPhoto{
+    display: flex;
+    flex-wrap: wrap;
+    margin:-10px;
+  }
+  .SelectionParamsPhoto img{
+    width: 150px;
+    margin: 10px;
+  }
+  .overflowAuto{
+    overflow-y: auto !important;
+    height: 100%;
+    /* overflow-x: none !important; */
+  }
+  .CheckBad{
+    font-size: 20px;
+    color:#aa3c3c;
+  }
+  .CheckGood{
+    font-size: 20px;
+    color:#00990d;
+  }

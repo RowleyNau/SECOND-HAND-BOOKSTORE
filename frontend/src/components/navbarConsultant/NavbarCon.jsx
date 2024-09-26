@@ -1,7 +1,7 @@
 // import React from 'react';
 import React, { useState } from 'react';
 import SearchInput from '../searchInput/SearchInput.jsx';
-import style from './Navbar.module.css';
+import style from './NavbarCon.module.css';
 import Logo from '../../assets/logo.png';
 import { myFunction } from './Scroll.js';
 import {FaMoneyBill, FaFileAlt, FaCalculator} from "react-icons/fa";
@@ -24,17 +24,18 @@ const NavbarCon = () => {
                         </ul>
                     </div> */}
                     <div className={style.logo_img}>
-                        <a><img src={Logo} className={style.img} alt='/'/></a>
+                    <a href='/Home'><img src={Logo} className={style.img}/></a>
                     </div>
                     <div className={style.menu}>
                         <ul>
                             <li className={style.gds}>
                                 <a href='' ><FaFileAlt className={style.menuIcons}/> учёт</a>
                                 <div className={style.dropdown} >
-                                    <a href="#">пользователи</a>
-                                    <a href="#">мероприятия</a>
-                                    <a href='/Books'>книги</a>
-                                    <a href="#">иные товары</a>
+                                    <a href="/control/Users">пользователи</a>
+                                    {/* <a href="#">мероприятия</a> */}
+                                    <a href='/control/Books'>книги</a>
+                                    <a href="/control/OtherGoods">иные товары</a>
+                                    <a href="/control/Characteristics">характеристики</a>
                                 </div>
                             </li>
                             <li className={style.gds}>
@@ -42,17 +43,17 @@ const NavbarCon = () => {
                                 <div className={style.dropdown} >
                                     <a href="#">запросы<br/>на прием книг</a>
                                     <a href="#">запросы<br/>на подбор книг</a>
-                                    <a href="#">запросы<br/>на консультацию</a>
+                                    <a href="/control/RequestConsultation">запросы<br/>на консультацию</a>
                                 </div>
                             </li>
                             <li>
-                                <a  href='/Analytics'><FaChartSimple className={style.menuIcons}/> аналитика</a>
+                                <a  href='/control/Analytics'><FaChartSimple className={style.menuIcons}/> аналитика</a>
                             </li>
                             <li>
-                                <a href=''><FaMoneyBill className={style.menuIcons}/> продажи</a>
+                                <a href='/control/Sales'><FaMoneyBill className={style.menuIcons}/> продажи</a>
                             </li>
                             <li>
-                                <a href=''><FaUserLarge className={style.menuIcons}/> профиль</a>
+                                <a href='/control/Profile/PersonalData'><FaUserLarge className={style.menuIcons}/> профиль</a>
                             </li>
                             {/* <li>
                                 <SearchInput />

@@ -5,7 +5,7 @@ const FunctionButton = (props) => {
     const { Click, text, id, ...inputProps } = props;
     return(
     <>
-    <button className={style.ButtonF}  onClick={Click}>
+    <button className={style.ButtonF} onClick={Click}>
         <p>{text}</p>        
     </button>
     </>

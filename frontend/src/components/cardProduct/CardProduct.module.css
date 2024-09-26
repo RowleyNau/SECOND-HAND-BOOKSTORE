@@ -3,15 +3,28 @@
     
     
 }
-.imgCP{
+.mainCP img{
     width: 200px;
     height: 300px;
     background-color: antiquewhite;
     border-radius: 5px;
 }
+.mainCP > p{
+    margin-top: 5px;
+}
 .priceCP{
-    font-size: 16px;
+    font-size: 18px;
 }
 .nameCP{
-    font-size: 14px;
+    font-size: 16px;
+}
+.buttonCP{
+    margin-top: 5px;
+    margin-bottom: 10px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+.buttonCP button{
+    margin:0;
 }

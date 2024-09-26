@@ -14,6 +14,7 @@ import InputCheckbox from '../components/allInput/InputCheckbox';
 import React, { useContext, useState } from 'react';
 import moment from 'moment'
 import Modal from '../components/modalWindow/Modal';
+import Navbar from '../components/navbar/Navbar';
 // import sent from '../components/ModalMessage/sent'
 
 const AcceptingBooks = () => {
@@ -42,26 +43,27 @@ const AcceptingBooks = () => {
         }
     return(
     <>
+    <Navbar/>
     <div className="mainUnit">
-        <PageTitle textTitle="Запрос на прием товара"/>
-        <p className="titleText">Информация о книгах</p> 
+        <PageTitle textTitle="запрос на прием товара"/>
+        <p className="titleText">информация о книгах</p> 
         <div className="questionnaireContent">                
             {/* <div><p className="basicText">Количество книг</p></div>
             <div><InputNum val = {} setVal = {}/></div> */}
-            <div><p className="basicText">Помощь в перевозке</p></div>
+            <div><p className="basicText">помощь в перевозке</p></div>
             <div><InputCheckbox val = {TransportAssistance} setVal = {setTransportAssistance}/></div>
-            <div><p className="basicText">Фото &#9734;</p></div>
-            <div><InputPhoto val = {Phone} setVal = {setPhone}/></div>
-            <div><p className="basicText">Комментарий</p></div>
+            <div className="RequiredInp"><p className="basicText">фото</p></div>
+            <div><InputPhoto val = {Phone} setVal = {setPhone} severalPhotos = {true}/></div>
+            <div><p className="basicText">комментарий</p></div>
             <div><InputStr val = {Comment} setVal = {setComment}/></div>
         </div>
-        <div><p>Поля со &#9734; обязательны для заполния</p></div>
-        {ErrorINP?<React.Fragment><br/></React.Fragment>:<p className = "messageError">Необходимо добавить фото</p>}
+        <div><p>красным выделены поля, обязательные для заполнения</p></div>
+        {ErrorINP?<React.Fragment><br/></React.Fragment>:<p className = "RequiredMes">необходимо добавить фото</p>}
         {sent?<ActionButton text="Изменить" Click={()=>setModalActive(true)}/> :<ActionButton text="Отправить" Click={add}/>}
         
 
     <Modal active={modalActive} setActive={setModalActive}>
-          <p>Заявка отправлена</p>       
+          <p >заявка отправлена</p>       
     </Modal>
     </div>
     </>

@@ -2,32 +2,33 @@
     display: inline-flex;
     border-radius: 5px;
     border: 0.1em solid rgba(108, 103, 97, 1);
-    margin-right: 5%;
-    width: 80%;
+    /* margin-right: 1px; */
+    width: 75%;
     background-color: #ffffff;
-    height: 25px;
+    height: 30px;
    
 }
 .searchDiv input{
     background-color: #ffffff;
-    width: 85%;
+    width: 100%;
     border: none;
     border-radius: 5px;
-    font-size: 16px;
+    font-size: 18px;
     /* background-image: url('../../assets/loupe.png'); */
     background-position: 10px 10px; 
     background-repeat: no-repeat;
-    padding: 1px 1px 1px 5px;
+    padding: 2px 2px 2px 5px;
 }
 .searchDiv input:focus {
     outline: none;
 }
 
 .searchDiv button{
+    margin-right: 5px;
     border: none;
     border-radius: 5px;
     margin: 2px;
-    width: 10%;
+    width: 16px;
     background-color: #ffffff;
     color:rgba(108, 103, 97, 1);
 }

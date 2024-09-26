@@ -6,6 +6,7 @@ import CloseButton from '../allButtons/closeButton/CloseButton.jsx';
 
 const Modal = ({active, setActive, children}) => {
     // const { textTitle, id, ...inputProps } = props;className={style.formTitle}
+    console.log(active)
     return(
     <>
     <div className={active ? "modal active": "modal"}>

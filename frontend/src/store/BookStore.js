@@ -6,3 +6,4 @@ export const BooksList = [
     {IdBookList: 5, Price: 370, ReceiptDate: "2023-12-10"},
     {IdBookList: 6, Price: 790, ReceiptDate: "2023-12-11"},
     {IdBookList: 7, Price: 370, ReceiptDate: "2023-12-20"}]
+    

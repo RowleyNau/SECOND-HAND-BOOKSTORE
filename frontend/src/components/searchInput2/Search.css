@@ -1,10 +1,9 @@
 .search-container{
     width: 100%;
     display: grid;
-    grid-template-columns: 1fr 30px;
+    grid-template-columns: calc(100% - 30px) 30px;
     font-family: "Palatino", sans-serif;
     font-size: 16px;
-    
 }
 .search-container input{
     /* width: calc(100% - 30px); */
@@ -15,6 +14,7 @@
 }
 .search-container button{
     padding: 5px;
+    /* padding-right: 0px; */
     width: 30px;
     display:flex;
     align-items: center;
@@ -23,6 +23,7 @@
     background-color: #F0DEC8;
     font-size: 16px;
     border-radius: 0px 5px 0px 0px;
+    cursor:pointer;
 }
 .search-container button:active{
     background-color: #ddcdb9;

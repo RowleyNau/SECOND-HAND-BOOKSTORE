@@ -1,30 +1,35 @@
-import Navbar from './components/navbar/Navbar';
-import Home from './pages/Home';
-import AcceptingBooks from './pages/AcceptingBooks';
-import Analytics from './pagesConsultant/Analytics';
+// import Navbar from './components/navbar/Navbar';
 import './index.css';
-import NavbarCon from './components/navbarConsultant/NavbarCon';
 import {BrowserRouter} from 'react-router-dom'
 import AppRouter from './components/AppRouter';
-import { useContext, useEffect } from 'react';
+import { useContext, useEffect, useState } from 'react';
 import { Context } from './index';
 import { observer } from 'mobx-react-lite';
 import { check } from './http/userApi';
-// import { truncate } from '../../server/db';
+import {Spinner} from "react-bootstrap";
+import ClientChat from './components/chat/ClientChat';
 
 const App = observer(() => {
   const {user} = useContext(Context)
-  // const [loading, setLoading] = useContext(true)
-  if (localStorage.getItem('token')&&localStorage.getItem('token')!="undefined")
-  {    
-    console.log(localStorage.getItem('token'))
-    user.setUser(true)
-    user.setIsAuth(true)
-  }
-    else{
-      user.setUser(false)
-      user.setIsAuth(false)
-    }
+  const user1 = {isAuth: true, isCon: true,}
+  const [loading, setLoading] = useState(true)
+  useEffect(()=>{
+    check().then(data =>{
+      // if(data!==false){
+      console.log(data.Con)
+      if (data){
+        user.setUser(data.user);
+        user.setIsAuth(true);
+        
+        user.setIsCon(data.Con);
+      }
+console.log(user.isCon)
+    }).finally(()=>setLoading(false))
+  })
+
+  if (loading) {
+    return <Spinner animation={"grow"}/>
+}
 
   return (
     
@@ -32,18 +37,22 @@ const App = observer(() => {
     <div class="bg"></div>
     <div className='mainCon'>
       <BrowserRouter>
-        {/* <Navbar /> */}
-        <NavbarCon/>
+        {/* {user && user.isCon ?<></> : <ClientChat/>   } */}
         <AppRouter/>
       </BrowserRouter>
-      {/* <NavbarCon/> */}
-      {/* <AcceptingBooks/> */}
-      {/* <Analytics/> */}
-
-
     </div>
     </>
   );
 })
 
 export default App;
+
+
+
+
+
+        {/* <Navbar /> */}
+        {/* <NavbarCon/> */}
+      {/* <NavbarCon/> */}
+      {/* <AcceptingBooks/> */}
+      {/* <Analytics/> */}

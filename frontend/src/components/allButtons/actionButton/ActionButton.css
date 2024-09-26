@@ -1,5 +1,5 @@
 .ButtonF{
-    background-color: #6C6761;
+    background-color: #6C6761 !important;
     padding: 7px;
     border: none;
     border-radius: 5px;
@@ -14,11 +14,11 @@
 	transform: translate(0, 0.25em);
 }
 .ButtonF:active {
-	background: #534e47;
+	background: #534e47 !important;
 }
 
 .ButtonF p{
-    color:rgb(255, 255, 255);
+    color:rgb(255, 255, 255) !important;
     font-size: 16px;
     text-transform: lowercase;
 }

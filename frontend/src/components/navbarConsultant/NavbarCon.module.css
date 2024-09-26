@@ -2,7 +2,6 @@
     width: 100vw;
     z-index:50000;
 }
-
 .box{
     /* height: 150px; */
     display: flex;
@@ -20,6 +19,9 @@
     background-position-y: 105%;
      margin:0;
      transition: all .3s ease;
+}
+.box.out {
+	top: -200px;
 }
 
 .logo_img{
@@ -81,7 +83,7 @@
     margin: 5px 20px 0px 20px;
     /* color:rgba(108, 103, 97, 1); */
 }
-.location a,p{
+.location a p{
     color:rgba(108, 103, 97, 1);
     /* color:rgb(255, 255, 255); */
 
@@ -97,6 +99,7 @@
     /* margin: 5px 5px 0px 5px; */
     align-items: center;
     color:rgba(108, 103, 97, 1); 
+    font-size: 22px;
 }
 .menu ul{
     display: inline-flex;

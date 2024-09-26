@@ -44,13 +44,334 @@
   font-weight:bold;
   margin-bottom: 10px;
 }
-.questionnaireContent{
+.questionnaireContent1{
   display: grid;
-  grid-template-columns: 200px 0.5fr;
+  grid-template-columns: 200px calc(100%-200px);
   margin-bottom: 15px;
+  width: 100%;
 }
 
-.questionnaireContent div{
+.questionnaireContent1 div{
   margin-bottom:5px;
   padding-right: 5px;
 }
+
+.RequiredMes{
+  border:2px solid #a71d1d ;
+  /* border:2px solid #208409 ; */
+  /* border-left: 2px solid #a71d1d ; */
+  margin:-3px;
+  margin-bottom: 4px;
+  padding:3px;
+  display: flex;
+  /* color: #208409; */
+  justify-content: center;
+  align-content: center;
+  /* width: min-content; */
+}
+.RequiredInp{
+  border:none;
+  border-left: 2px solid #a71d1d ;
+  margin-left:-3px;
+  padding-left:3px;
+  /* width: min-content; */
+}
+.ProfileMenu{
+  border: 2px solid #6C6761;
+  border-radius: 5px;
+  color: black;
+  display: grid;
+  width: 200px;
+  margin-right:20px;
+  height: max-content;
+}
+.ProfileMenu a{
+  font-size: 16px;
+  padding: 10px;
+  margin:0px;
+  color: black;
+}
+.ProfileMenu a:hover{
+  background-color: #F0DEC8;
+  color: black;
+}
+.SelectMenu {
+  color:#ffffff !important;
+  background-color: #6C6761!important;
+}
+.ExitMenu {
+  color:#000000 !important;
+  background-color: #ffddd8;
+}
+.Goto {
+  color:#000000 !important;
+  background-color: #d9ebce;
+}
+.ProfileSections{
+  width: 100%;
+  display: flex;
+
+  grid-template-columns: 20px 1fr;
+}
+.SelectionParams{
+  width: 100%;
+}
+.SelectionParams label {
+  /* width: 100%; */
+  margin-bottom:15px;
+  display: grid;
+    /* align-items: center; */
+    grid-template-columns:30% 60%;
+    color: black;
+}
+.SelectionParams p {
+    color: black;
+}
+.SelectionBut{
+  width: 100%;
+  display: flex;
+  justify-content: center;
+}
+.AdrText{
+  width: 100%;
+  margin-bottom: 15px;
+}
+.ListPurchaseWin{
+  width: 100%;
+  display: flex;
+  grid-template-columns: 1fr 20px;
+}
+.ListGoods{
+  width: 100%;
+}
+.ListGoodsOne{
+  width: 100%;
+  display:inline-flex;
+  border-bottom: 2px solid #6C6761;
+  padding: 5px;
+  justify-content: space-between;
+}
+.ListGoodsOne img{
+  width: 80px;
+  margin-right: 10px;
+}
+.ListGoodsOneInfo{
+  width: 80px;
+  display: grid;
+  grid-template-columns: 1fr;
+  align-content: space-between;
+  justify-content: center;
+}
+.ListGoodsOneInfo p{
+  display: flex;
+  justify-content: center;
+}
+.ListGoodsOneInfo div{
+  display: flex;
+  justify-content: center;
+}
+.ListGoodsOneInfo button{
+  justify-content: center;
+  width: 10px;
+  background-color: transparent;
+  margin:5px;
+  font-size: 18px;
+  border: none;
+   /* display: inline-flex; */
+}
+.ListGoodsOneInfo button{
+  width: 10px;
+  background-color: transparent;
+  margin:5px;
+  font-size: 18px;
+  border: none;
+}
+.ListGoodsPlacing button{
+  /* margin:20px; */
+}
+.ListGoodsPlacing {
+  margin:20px;
+  border: 2px solid #6C6761;
+  width: max-content;
+  height: max-content;
+  border-radius: 5px;
+  padding: 10px;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+.ListGoodsPlacing div {
+  display: inline-flex;
+  justify-content: space-between;
+  width: 100%;
+}
+.OnePurchase{
+  width: 100%;
+  border-bottom:  2px solid #6C6761;
+  display: flex;
+  flex-wrap: wrap;
+  margin-bottom: 15px;
+}
+.OnePurchaseInfo{
+  width: 100%;
+  display: flex;
+}
+.OnePurchaseDatePaymentAddress{
+  width: 100%;
+  display: grid;
+  align-items: start;
+  justify-content: start;
+  justify-items: start;
+  align-content: start;
+  /* display: flex; */
+}
+.OnePurchaseDatePaymentAddress > p{
+  padding-top: 5px;
+  /* display: flex; */
+}
+.OnePurchaseInfoBotton{
+  width: max-content;
+  display: grid;
+  justify-content: flex-end;
+  justify-items: center;
+}
+.OnePurchaseInfoBotton p{
+  display: flex;
+  justify-content:  flex-start;
+  align-items: center;
+  padding:5px;
+  width: max-content;
+  min-width: 100%;
+}
+.OnePurchasePhoto {
+  padding-top: 10px;
+  width: 100%;
+  overflow: hidden; 
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  flex-wrap: wrap;
+  margin-left: -5px;
+  margin-right: -5px;
+  /* position: relative; */
+  /* display: inline-flex !important; */
+   /* white-space: nowrap; */
+}
+
+.OnePurchasePhoto img {
+  width: 90px;
+  margin:5px;
+  display: flex;
+}
+
+/* .swiper {
+  width: 100%;
+  box-sizing: border-box;
+}
+.swiper-slide {
+  width: 200px !important;
+  height: 400px!important;
+  background: #882525;
+  line-height: 100px; 
+   text-align: center;
+  margin:5px;
+  display: flex;
+}
+.swiper-slide:nth-child(2) {
+  background: #8acc7d;
+}
+.swiper-slide:nth-child(3) {
+  background: #b7cc7d;
+}
+.swiper-slide:nth-child(4) {
+  background: #9eb75c;
+}
+.swiper-slide:nth-child(5) {
+  background: #7da8cc;
+}
+.swiper-slide:nth-child(6) {
+  background: #96cc7d;
+}
+.swiper-slide:nth-child(7) {
+  background: #cc7dae;
+} */
+.CategoryGoodsScroll{
+  width: 100%;
+  /* overflow: hidden;   */
+}
+.HomeCategory{
+  padding-bottom: 15px;
+  width: 100%;
+  margin-bottom: 15px;
+  border-bottom: 2px solid #6C6761;
+}
+.HomeCategoryTop{
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 15px;
+}
+.HomeCategoryTop > p{
+  font-size: 20px;
+}
+.SelectionRequestInfo{
+  display: flex;
+  margin-bottom: 15px;
+  justify-content: flex-start;
+  align-items: center;
+}
+.SelectionRequestInfo > p{
+  margin-right: 16px;
+}
+.SelectionRequestOne{
+  width: 100%;
+  border-top: 2px solid #6C6761;
+  padding-top: 10px;
+  padding-bottom: 10px;
+}
+.SelectionRequestOneTop{
+  display: inline-flex;
+  width: 100%;
+  justify-content: space-between;
+  margin-right: 10px;
+
+}
+.SelectionRequestInfo > img{
+  width: 80px;
+}
+.SelectionRequestGoods{
+  width: 100%;
+  display: flex;    
+  flex-wrap: wrap;
+  margin:-10px
+  /* justify-content: space-between; */
+}
+.SelectionRequestGoods > div{
+  margin:10px;
+}
+
+.SelectionRequestResultTrue{
+  font-size: 20px;
+  margin-left:5px;
+  color: #118601;
+}
+.SelectionRequestResultFalse{
+  font-size: 20px;
+  margin-left:5px;
+  color: #a1200e;
+}
+.SelectionRequestResultClock{
+  font-size: 20px;
+  margin-left:5px;
+  color: #6C6761;
+}
+.SelectionRequestInfo > p{
+  /* width: 80px; */
+  display:flex;
+  align-items: center;
+}
+.PhotoName{
+  display: inline-flex;
+}
+

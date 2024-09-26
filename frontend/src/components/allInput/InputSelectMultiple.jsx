@@ -2,7 +2,6 @@ import React from 'react';
 
 import Select from 'react-select';
 import makeAnimated from 'react-select/animated';
-// import { colourOptions } from '../data';
 
 const InputSelectMultiple = (props) => {
     const { selectedValue, setSelectedValue, text, val, id, ...inputProps } = props;
@@ -15,7 +14,16 @@ const InputSelectMultiple = (props) => {
     <Select
       closeMenuOnSelect={false}
       components={animatedComponents}
-      defaultValue={[val[4]]}
+      value={selectedValue}
+      placeholder={'поиск...'}
+    styles={{
+      placeholder: (base) => ({
+        ...base,
+        fontSize: '1em',
+        color: '#6C6761',
+        fontWeight: 400,
+      }),
+    }}
       isMulti
       options={val}
       onChange={handleSelectChange}

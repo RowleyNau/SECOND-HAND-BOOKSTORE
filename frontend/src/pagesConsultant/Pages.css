@@ -4,27 +4,27 @@
 } */
 .mainUnit{
   z-index: 10;
-    position:fixed;
-    display: flex;
-    /* flex-wrap: nowrap; */
-    width:calc(100% - 60px);
-    margin-top: 30px;
-    margin-left: 30px;
-    margin-right: 30px;
-    /* margin-bottom: 30px; */
-    height: max-content;
-    background-color: #ffffff;
-    top: 185.5px;
-    border-radius: 15px;
-    /* padding-left: 15px; */
-    /* padding-right: 15px; */
-    padding: 15px;
-    z-index:40000;
-    /* border: 1rem solid; */
-    flex-direction: column;
-    color:black;
-    position: absolute;
-    /* overflow-y:scroll; */
+  position:fixed;
+  display: flex;
+  /* flex-wrap: nowrap; */
+  width:calc(100% - 60px);
+  margin-top: 30px;
+  margin-left: 30px;
+  margin-right: 30px;
+  /* margin-bottom: 30px; */
+  height: max-content;
+  background-color: #ffffff;
+  top: 185.5px;
+  border-radius: 15px;
+  /* padding-left: 15px; */
+  /* padding-right: 15px; */
+  padding: 15px;
+  z-index:40000;
+  /* border: 1rem solid; */
+  flex-direction: column;
+  color:black;
+  position: absolute;
+  /* overflow-y:scroll; */
 }
 /* .mainUnit p{
   color:black;
@@ -50,7 +50,7 @@
   margin-bottom: 15px;
 }
 
-.questionnaireContent div{
+.questionnaireContent > div{
   margin-bottom:5px;
   padding-right: 5px;
 }
@@ -132,21 +132,37 @@ width: 100vw; */
 	/* font-weight: bold;
 	padding: 5px;
 	background: #efefef; */
-	border: 1px solid #6C6761  ;
+	border: 1px solid #6C6761;
 	padding: 5px;
   background-color: transparent;
   /* width: max-content; */
 }
 .table td {
-	border: 1px solid #6C6761 ;
+	border: 1px solid #6C6761;
 	padding: 5px;
   border-bottom: none;
   background-color: transparent;
 }
-.SearchTable th{
+
+.SearchTable {
+  border: 1px solid #6C6761;
+  border-bottom: none;
+  border-radius: 5px 5px 0px 0px;
+  background-color: transparent; 
   padding: 0px;
-  border: none;
+  /* padding-right: 15px; */
+  /* z-index:99999999;  */
 }
+.SearchTable input{
+  border-radius: 5px 5px 5px 5px;
+}
+/* .SearchTable th{
+ 
+  border: none;
+  width: 100%;
+  border-radius: 5px;
+  z-index:10000; 
+} */
 
 .event nav{
 	display:inline-flex;
@@ -160,7 +176,8 @@ width: 100vw; */
   border:none;
   background-color: transparent;
   font-size: 16px;
-
+  
+  cursor:pointer;
 }
 
 .num {
@@ -187,6 +204,34 @@ width: 100vw; */
 .controlBut{
   margin-bottom: 10px;
   margin-left:-5px;
+  display: flex;
+  justify-content: center;
+}
+.ButPage{
+    display: flex;
+    align-items: center;
+    width: 100%;
+    justify-content: flex-end;
+}
+
+.ButPage button{
+    /*  */
+    background: transparent;
+    font-size:18px;
+    display: inline-flex;
+    margin: 5px;
+    color: #000000;
+    cursor:pointer;
+}
+.ButPageSel{
+  /* background: transparent; */
+  border: none;
+  border-bottom: 1px solid #6C6761;
+}
+
+.ButPageNoSel{
+    border: none;
+    
 }
 
 
@@ -195,9 +240,9 @@ width: 100vw; */
  }
  [data-tooltip]::after {
   z-index:1000000000;
-  content: attr(data-tooltip); /* Выводим текст */
+  /* content: attr(data-tooltip); Выводим текст */
   position: absolute; /* Абсолютное позиционирование */
-  width: max-content; /* Ширина подсказки */
+  width: fit-content; /* Ширина подсказки */
   left: 0; top: 0; /* Положение подсказки */
   background: #e5d1b7; /* Синий цвет фона */
   color: #534e47; /* Цвет текста */
@@ -206,8 +251,92 @@ width: 100vw; */
   pointer-events: none; /* Подсказка */
   opacity: 0; /* Подсказка невидима */
   transition: 1s; /* Время появления подсказки */
+  /* content: attr(data-tooltip); */
+  white-space: pre-wrap;
+  /* margin-bottom: 5px; */
  } 
  [data-tooltip]:hover::after {
   opacity: 1; /* Показываем подсказку */
-  top: 2em; /* Положение подсказки */
+  top: 2.7em; /* Положение подсказки */
  }
+
+ .SearchCross{
+  display: flex;
+  width: 100%;
+  height: 100%;
+  border: none;
+  background-color: transparent;
+  font-size: 20px;
+  color: #000000;
+  cursor: pointer;
+  text-transform: lowercase;
+  justify-content: center;
+    align-content: center;
+}
+
+.charactControl label{
+  width: 100%;
+  display: flex;
+  /* grid-template-columns:40% 60%; */
+}
+
+.charactControl {
+  width: 100%;
+  margin-bottom: 5px;
+  /* grid-template-columns:40% 60%; */
+}
+.butCharactControl{
+  width: 100%;
+  display: inline;
+  margin-left:-5px;
+}
+.ParamCharact label{
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  margin-bottom:5px;
+}  
+.ParamCharact p{
+  align-content: center;
+}
+.ParamCharact~p{
+  margin: 5px ;
+}
+.ParamCharact{
+  margin-top: 5px;
+}
+.EntModal{
+  z-index: 100000000000;
+  height: 100vh;
+  width: 100%;
+  background-color: rgb(0, 0, 0, 0.4);
+  position: fixed;
+  top: 0;
+  left: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  /* transform: scale(0); */
+  opacity: 1;
+  pointer-events: all;
+}
+
+.EntModal__content{
+  padding:15px;
+  border-radius: 5px;
+  background-color: white;
+  height: max-content;
+  width: max-content;    
+  max-height: 80%;
+  overflow-y: scroll;
+}
+.ExitMenu {
+  color:#000000 !important;
+  background-color: #ffddd8;
+}
+.Goto {
+  color:#000000 !important;
+  background-color: #d9ebce;
+}
+
+
+

@@ -2,10 +2,10 @@ import './ActionButton.css';
 // import {FaMagnifyingGlass } from "react-icons/fa6";
 
 const ActionButton = (props) => {
-    const { Click, text, id, ...inputProps } = props;
+    const { Click, dataTooltip, text, id, ...inputProps } = props;
     return(
     <>
-    <button className="ButtonF" onClick={Click}>
+    <button className="ButtonF" onClick={Click} data-tooltip={dataTooltip}>
         <p>{text}</p>        
     </button>
     </>

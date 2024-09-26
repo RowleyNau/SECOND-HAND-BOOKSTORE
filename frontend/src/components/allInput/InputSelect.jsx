@@ -1,5 +1,6 @@
 import style from './AllInput.module.css';
 import Select from 'react-select'
+import { RxCross2 } from "react-icons/rx";
 
 const InputSelect = (props) => {
     const { selectedValue, setSelectedValue, text, val, id, ...inputProps } = props;
@@ -7,12 +8,22 @@ const InputSelect = (props) => {
     const handleSelectChange = (selectedOption) => {
       setSelectedValue(selectedOption);
     };
+    // console.log(selectedValue);
     return(
-    <>
+    <div className={style.SelectCompon}>
     <Select 
     className={style.InputSelect} 
-    defaultValue={val[0]}
+    value={selectedValue}
     options={val}
+    placeholder={'поиск...'}
+    styles={{
+      placeholder: (base) => ({
+        ...base,
+        fontSize: '1em',
+        color: '#6C6761',
+        fontWeight: 400,
+      }),
+    }}
     onChange={handleSelectChange}
     theme={(theme) => ({
       ...theme,
@@ -28,7 +39,13 @@ const InputSelect = (props) => {
       },//6C6761
     })}
     />
-    </>
+    <div>
+      <button className='SearchCross' onClick={()=> {setSelectedValue([])}}>
+        <RxCross2/>
+      </button>
+    </div>
+    
+    </div>
     )
 }
 export default InputSelect

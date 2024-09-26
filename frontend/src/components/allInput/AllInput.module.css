@@ -26,12 +26,17 @@
     
     /* outline:none; */
 }
-.InputStrMini:active{
-    /* width: 200px;
-    height: 25px; */
-    
+.InputStrMini:focus{
     border: 2px solid #6C6761;
-    /* outline:none; */
+    outline:none;
+}
+.InputStr:focus{
+    border: 2px solid #6C6761;
+    outline:none;
+}
+.InputNum:focus{
+    border: 2px solid #6C6761;
+    outline:none;
 }
 .small{
     width: 100px;
@@ -80,8 +85,15 @@
 input[type="date"]{
     border: 0.1em solid #6C6761;
     border-radius: 5px;
-    width: 105px;
-    height: 25px;
+    width: max-content;
+    height: 38px;
+    padding-left: 5px; 
+    padding-right: 5px;
+    font-size: 16px;
+}
+input[type="date"]:focus{
+    border: 2px solid #6C6761;
+    outline:none;
 }
 input[type="date"]::-webkit-calendar-picker-indicator {
     cursor: pointer;
@@ -112,7 +124,7 @@ input[type="checkbox"]:not(:checked) + label:before {
     content: "";
     position: absolute;
     left: 0px;
-    top: -1.0em;
+    /* top: -1.0em; */
     width: 22px;
     height: 22px;
     border: 0.1em solid #6C6761;
@@ -133,13 +145,13 @@ input[type="checkbox"]:not(:checked) + label:after{
     -moz-transition: all 0.2s ease;
     -o-transition: all 0.2s ease;
     transition: all 0.2s ease;
-    top: -1.0em;
+    /* top: -1.0em; */
 }
 
 input[type="checkbox"]:checked + label:after, 
 input[type="checkbox"]:not(:checked) + label:after {
-    left: 4px;
-    top: -0.8em;
+    left: 2px;
+    top: 2px;
     width: 17px;
     height: 10px;
     border-radius: 4px;
@@ -159,3 +171,24 @@ input[type="checkbox"]:not(:checked) + label:after {
 input[type="checkbox"]:checked + label:after {
     opacity: 1;
 }
+
+.SelectCompon{
+    width: 100%;
+    display: flex;
+    /* grid-template-columns: 1fr 20px; */
+    
+  }
+
+.SearchCross{
+    display: flex;
+    width: 100%;
+    height: 100%;
+    border: none;
+    background-color: transparent;
+    font-size: 20px;
+    color: #000000;
+    cursor: pointer;
+    text-transform: lowercase;
+    justify-content: center;
+    align-content: center;
+  }

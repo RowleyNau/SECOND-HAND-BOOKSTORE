@@ -6,13 +6,13 @@ module.exports = function (req, res, next) {
         next()
     }
     try{
+        console.log(req.headers.authorization)
         const token = req.headers.authorization.split(' ')[1]
-        
         if (!token){
             return res.status(401).json({message:"Не авторизован"})
         }
         
-        const decoded = jwt.verify(token, "BB_104567")
+        const decoded = jwt.verify(token, process.env.SECRET_KEY)
         console.log(decoded, req.clients)
         req.clients = decoded
         next()

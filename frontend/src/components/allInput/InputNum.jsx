@@ -8,7 +8,12 @@ const InputNum = (props) => {
     }
     return(
     <>
-    <input className={style.InputNum} value={val} type="number" name="name" min={min} onChange={ e=>onChange(e)}/>
+    <input className={style.InputNum} 
+                value={val} 
+                type="number" 
+                min={min} 
+                max={max} 
+                onChange={ e=>onChange(e)}/>
     </>
     )
 }

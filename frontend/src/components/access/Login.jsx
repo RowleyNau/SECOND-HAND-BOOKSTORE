@@ -7,6 +7,7 @@ import ActionButton from '../allButtons/actionButton/ActionButton'
 import { login, registration } from '../../http/userApi';
 import { Context } from '../../index.js';
 import '../../index.css'
+import InputCheckbox from '../allInput/InputCheckbox.jsx';
 
 // import useContext from 'react';
 // import { Context } from '.';
@@ -24,6 +25,7 @@ const Login = (props) => {
     const [LastName, setLastName]=useState('')
     const [Name, setName]=useState('')
     const [MiddleName, setMiddleName]=useState('')
+    const [Agreement, setAgreement]=useState('')
 
     // const [PhoneINP, setPhoneINP]=useState(true)
     // const [MailINP, setMailINP]=useState(true)
@@ -33,42 +35,44 @@ const Login = (props) => {
     // const [MiddleNameINP, setMiddleNameINP]=useState(true)
 
     const [ErrorINP, setErrorINP]=useState(false)
+    // const [ErrorINP, setErrorINP]=useState('Вам был отправлен пароль на указанный почтовый адрес. Введите его')
 
     const click= async ()=>{
         try
         {let data ;
-        var TEL = new RegExp("(\\+?\\d[- .]*){7,13}");
+        // var TEL = new RegExp("(\\+?\\d[- .]*){7,13}");
         var MAIL = new RegExp("[^@]+@[^@]+\\.[a-zA-Z]{2,6}");
         var PASS = new RegExp("^[a-zA-Z0-9]{3,20}$");
-        var FIO = new RegExp("^([А-Я]{1}[а-яё]{1,23}|[A-Z]{1}[a-z]{1,23})$");
+        // var FIO = new RegExp("^([А-Я]{1}[а-яё]{1,23}|[A-Z]{1}[a-z]{1,23})$");
         if (Active){
-            data = await login(Phone, Mail, Password)
+            data = await login(Mail, Password)
         } else{
 
-            var inpTel = document.getElementsByClassName("inpTel")[0].value;
-            var inpMail = document.getElementsByClassName("inpMail")[0].value;
-            var inpPass = document.getElementsByClassName("inpPass")[0].value;
-            var inpName = document.getElementsByClassName("inpFIO")[1].value;
-            console.log(inpTel, inpMail, inpPass)
-            if(TEL.test(inpTel) && (inpMail==''||MAIL.test(inpMail)) && PASS.test(inpPass) && (inpName==''||FIO.test(inpName))){
+            console.log(Mail, Password)
+            // if(TEL.test(inpTel) && (inpMail==''||MAIL.test(inpMail)) && PASS.test(inpPass) && (inpName==''||FIO.test(inpName)))
+            // if((Mail!==''||MAIL.test(Mail)) && PASS.test(Password) && Name!=='')
+                // {
                  
-                console.log(LastName, Name,  MiddleName, Phone, Mail, Password)
-                data = await registration(LastName, Name,  MiddleName, Phone, Mail, Password)
+                console.log(Name, Mail, Password)
+                data = await registration(Name, Mail, Password)
                 console.log(data) 
-            }
-            else {
-                setErrorINP("Ошибка!")
-                return
-            }
+            // }
+            // else {
+            //     // console.log(inpName=='', FIO.test(inpName)) 
+            //     setErrorINP("!")
+            //     return
+            // }
 
 
           
         }
         user.setUser(user)
         user.setIsAuth(true)
-        // console.log('asdffdsgdfgfdsgfdsfgdsfgdsgdfg')
-        setMActive(false)   
-        }
+        user.setIsCon(data.Con);
+        
+        if (Mactive){setMActive(false)}   
+        // document.location.reload();        
+    }
         catch (e){
             console.log(e)
             // alert(e.response.data.message)
@@ -82,20 +86,19 @@ const Login = (props) => {
     <>
 {  Active ?  
     <>
-<PageTitle textTitle="Авторизация"/>
+<PageTitle textTitle="авторизация"/>
     {/* <form> */}
     <div className='content'>
-        <div><p>Телефон или </p></div>
         <div><p>e-mail</p></div>
-        <div><InputStrMini type="tel" className = "inpTel" value={Phone} onClick={e =>  setPhone(e.target.value)} setCompanyName = {setPhone}/></div>
         <div><InputStrMini type="email"  className = "inpMail" value={Mail} onClick={e => setMail(e.target.value)} setCompanyName = {setMail} /></div>
-        <div><p>Пароль</p></div><div> </div>
+        <div><p>пароль</p></div>
         <div><InputStrMini type="password" className = "inpPass" pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}" value={Password} onClick={e =>  setPassword(e.target.value)} setCompanyName = {setPassword}/></div>
     </div>
     <div className='buttonSection'>        
-        <ActionButton text="Войти" Click={click}/>
-        {ErrorINP?<p className = "messageError">{ErrorINP}</p>:<React.Fragment><br/></React.Fragment>}
-        <a onClick={() => setActive(false)}>Не зарегистрированы?</a>
+        {ErrorINP?<p className = "RequiredMes">{ErrorINP}</p>:<React.Fragment><br/></React.Fragment>}
+        <ActionButton text="Войти" Click={click}/>        
+        <a onClick={() => setActive(false)}>забыли пароль?</a>
+        <a onClick={() => setActive(false)}>не зарегистрированы?</a>
     </div>
     {/* </form> */}
     </>
@@ -103,30 +106,37 @@ const Login = (props) => {
     :
 
     <>
-    <PageTitle textTitle="Регистрация"/>
+    <PageTitle textTitle="регистрация"/>
     {/* <form> */}
     <div className='content'>
-        <div><p>Фамилия</p> {}</div>
-        <div><InputStrMini type="text" className = "inpFIO" pattern="[А-Яа-я]*?\s[А-Яа-я]*?\s[А-Яа-я]*" value={LastName} onClick={e =>  setLastName(e.target.value)} setCompanyName = {setLastName}/></div>
-        <div><p>Имя &#9734;</p></div>
+        <div><p>имя</p></div>
         <div><InputStrMini type="text" className = "inpFIO" pattern="[А-Яа-я]*?\s[А-Яа-я]*?\s[А-Яа-я]*" value={Name} onClick={e =>  setName(e.target.value)} setCompanyName = {setName}/></div>
-        <div><p>Отчество</p></div>
-        <div><InputStrMini type="text" className = "inpFIO" pattern="[А-Яа-я]*?\s[А-Яа-я]*?\s[А-Яа-я]*" value={MiddleName} onClick={e =>  setPhone(e.target.value)} setCompanyName = {setMiddleName}/></div>
-        <div><p>Номер телефона</p></div>
-        <div data-tooltip="Необходимл заполнить, если не введен e-mail"><InputStrMini type="tel" className = "inpTel" pattern="(\+?\d[- .]*){7,13}" value={Phone} onClick={e =>  setPhone(e.target.value)} setCompanyName = {setPhone}/></div>
         <div><p>e-mail</p></div>
-        <div data-tooltip="Необходимл заполнить, если не введен номер телефона"><InputStrMini  type="email" className = "inpMail" pattern="[^@]+@[^@]+\.[a-zA-Z]{2,6}" value={Mail} onClick={e => setMail(e.target.value)} setCompanyName = {setMail}/></div>
-        <div data-tooltip="Пороль должен состоять из 6 символов и как минимум из одной цифры и одной латинской буквы"><p>Пароль &#9734;</p></div>
-        <div data-tooltip="Пороль должен состоять из 6 символов и как минимум из одной цифры и одной латинской буквы"><InputStrMini type="password" className = "inpPass" pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}" value={Password} onClick={e =>  setPassword(e.target.value)} setCompanyName = {setPassword}/></div>
+        <div><InputStrMini  type="email" className = "inpMail" pattern="[^@]+@[^@]+\.[a-zA-Z]{2,6}" value={Mail} onClick={e => setMail(e.target.value)} setCompanyName = {setMail}/></div>
+        {
+            ErrorINP =='Вам на почту был отправлен пароль. Введите его в соответвующее поле'||ErrorINP =='введен неверный пароль'?
+            <>
+        <div data-tooltip="Пороль должен состоять из 6 символов и как минимум из одной цифры и одной латинской буквы">
+            <p>пароль</p></div>
+         <div data-tooltip="Пороль должен состоять из 6 символов и как минимум из одной цифры и одной латинской буквы"><InputStrMini type="password" className = "inpPass" pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}" value={Password} onClick={e =>  setPassword(e.target.value)} setCompanyName = {setPassword}/></div>
+            </>
+            :
+            <></>
+        }
         
     </div>
     {/* </form> */}
     <div className='buttonSection'>  
-    <div><p>Поля со &#9734; обязательны для заполния</p></div>      
+    {/* <div><p>Красным выделены поля, обязательные для заполнения</p></div>       */}
+    <div className='CheckReg'>
+        <p>Я даю согласие на обработку персональных данных</p>
+        <InputCheckbox val = {Agreement} setVal = {setAgreement}/>
+    </div> 
+    {ErrorINP?<p className = "RequiredMes">{ErrorINP}</p>:<React.Fragment><br/></React.Fragment>}
         <ActionButton text="Войти" Click={click}/>
-        {ErrorINP?<p className = "messageError">{ErrorINP}</p>:<React.Fragment><br/></React.Fragment>}
+        
         {/* <React.Fragment><br/></React.Fragment> */}
-        <a onClick={() => setActive(true)}>Зарегистрированы?</a>
+        <a onClick={() => setActive(true)}>зарегистрированы?</a>
     </div>
     </>
     }

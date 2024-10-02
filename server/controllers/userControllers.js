@@ -85,8 +85,8 @@ class UserController {
                     port: 587,
                     secure: false, // true для 465, false для других портов
                     auth: {
-                        user: 'rowleynau@mail.ru', // Ваш email
-                        pass: 'FFzJ5NgxiYSBcTGvXubh', // Ваш пароль
+                        user: '***', // Ваш email
+                        pass: '***', // Ваш пароль
                     },
                     tls: {
                         rejectUnauthorized: false // Отключение проверки сертификата (может помочь при некоторых проблемах с SSL)
@@ -94,7 +94,7 @@ class UserController {
                 });
                 
                 let result = await transporter.sendMail({
-                    from: '"BookBox" <rowleynau@mail.ru>',
+                    from: '"BookBox" <***>',
                     to: Mail,
                     subject: 'Регитрация',
                     text: 'Завершите регистрацию на сайте BookBox',
